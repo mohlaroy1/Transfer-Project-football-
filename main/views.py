@@ -58,3 +58,27 @@ def club_details_view(request, pk):
         'players': players
     }
     return render(request, 'club-details.html', context)
+
+
+def tryouts_details_view(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        position = request.POST.get('position')
+        message = request.POST.get('message')
+
+
+        Tryout.objects.create(
+            name=name,
+            email=email,
+            position=position,
+            message=message
+        )
+
+        return render(request, 'tryouts.html', {'success': True})
+
+    return render(request, 'tryouts.html')
+
+
+def about_view(request):
+    return render(request, 'about.html')
