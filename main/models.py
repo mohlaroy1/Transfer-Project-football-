@@ -57,6 +57,8 @@ class Transfer(models.Model):
     season = models.ForeignKey(Season, on_delete=models.SET_NULL, blank=True, null=True)
 
 
+
+
 class Tryout(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField()

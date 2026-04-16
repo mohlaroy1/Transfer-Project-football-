@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="nav">
+    <h2>– TOP-50 CLUBS BY EXPENDITURE –</h2>
+</div>
+
+<div class="latest-transfers">
+
+    <table class="top-players" style="margin-top: 80px;">
+
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Club</th>
+                <th>Expenditures (mill. euro)</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for club in clubs %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>
+                        {% if club.logo %}
+                            <img src="{{ club.logo.url }}" alt="{{ club.name }} logo" style="width: 30px; height: 30px; vertical-align: middle; margin-right: 10px;">
+                        {% endif %}
+                        {{ club.name }}
+                    </td>
+                    <td>{{ club.total_expenditure }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3">No clubs found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+    <hr>
+
+    <p>
+        It is a list of the most expensive transfers of all time.
+        The minimum transfer value is 50 million euro.
+    </p>
+
+</div>
+{% endblock %}
