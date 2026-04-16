@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+  /* This style targets the rows in your table to provide spacing */
+  .top-players tr {
+    border-bottom: 1px solid #eee; /* Adds a light line to separate rows */
+  }
+  .top-players td {
+    padding: 15px 10px; /* Adds vertical and horizontal space inside each cell */
+  }
+</style>
+
+<div class="nav">
+  <h2>– TOP-50 CLUBS BY INCOME –</h2>
+  <table class="content-nav">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Club</th>
+        <th>Income (mill. euro)</th>
+      </tr>
+    </thead>
+  </table>
+</div>
+
+<div style="height: 55px;"></div>
+
+<div class="latest-transfers">
+  <table class="top-players">
+    {% for club in top_clubs %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>
+        {% if club.old_club__logo %}
+            <img src="{{ MEDIA_URL }}{{ club.old_club__logo }}"
+                 alt="{{ club.old_club__name }} logo"
+                 style="width: 30px; height: 30px; vertical-align: middle; margin-right: 10px;">
+        {% endif %}
+        {{ club.old_club__name }}
+      </td>
+      <td>{{ club.total_income|floatformat:0 }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="3">No records found.</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <hr>
+  <p>It is a list of top-50 clubs with the highest revenue on transfers.</p>
+</div>
+{% endblock %}

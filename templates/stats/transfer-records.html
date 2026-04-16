@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
+
 {% block content %}
+
+<style>
+  .content-nav td {
+    padding: 15px 10px; /* Top/Bottom padding, Left/Right padding */
+    border-bottom: 1px solid #ddd; /* Optional: adds a light line between rows */
+  }
+</style>
+
 <div class="nav">
   <h2>– TRANSFER RECORDS –</h2>
 
@@ -22,8 +31,8 @@
         <td>{{ transfer.player.name }}</td>
         <td>{{ transfer.old_club.name }}</td>
         <td>{{ transfer.new_club.name }}</td>
-        <td>{{ transfer.season.name|default:"-" }}</td>
-        <td>{{ transfer.price|default:"N/A" }}</td>
+        <td>{{ transfer.season.name }}</td>
+        <td>{{ transfer.price }}</td>
       </tr>
       {% empty %}
       <tr>

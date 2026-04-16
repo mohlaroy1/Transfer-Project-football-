@@ -126,15 +126,27 @@ class Top50ClubsByExpenditureView(View):
 
 class TransferRecordsView(View):
     def get(self, request):
-        transfers = Transfer.objects.select_related(
-            'player',
-            'old_club',
-            'new_club',
-            'season'
-        ).all()
+        transfers = (
+            Transfer.objects
+            .select_related('player', 'old_club', 'new_club', 'season')
+            .filter(price__gte=50)
+            .order_by('-price')
+        )
 
-        print("Transfers count:", transfers.count())
-
-        return render(request, 'transfer-records.html', {
+        return render(request, 'stats/transfer-records.html', {
             'transfers': transfers
         })
+
+
+class Top50IncomeClubsView(View):
+    def get(self, request):
+        top_clubs = Transfer.objects.filter(old_club__isnull=False) \
+            .values('old_club__name') \
+            .annotate(total_income=Sum('price')) \
+            .order_by('-total_income')[:50]
+
+        context = {
+            'top_clubs': top_clubs,
+        }
+
+        return render(request, 'stats/top-50-clubs-by-income.html', context)

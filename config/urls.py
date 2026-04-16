@@ -19,10 +19,10 @@ urlpatterns = [
     path('about/',views.about_view,name='about'),
     path('about.html',views.about_view),
     path('statistics/', views.StatisticsView.as_view(), name='stats'),
-    path('statistics/150-accurate-predictions/', views.Top150AccuratePredictionsView.as_view(), name='top150-accurate-predictions'),
-    path('statistics/top-50-clubs-by-expenditure/',views.Top50ClubsByExpenditureView.as_view(),name='top50-clubs-by-expenditure'),
-    path('statistics/transfer-records/',views.TransferRecordsView.as_view(),name='transfer-records'),
-
+    path('stats/150-accurate-predictions/', views.Top150AccuratePredictionsView.as_view(), name='top150-accurate-predictions'),
+    path('stats/top-50-clubs-by-expenditure/',views.Top50ClubsByExpenditureView.as_view(),name='top50-clubs-by-expenditure'),
+    path('stats/transfer-records/',views.TransferRecordsView.as_view(),name='transfer-records'),
+    path('stats/top-50-clubs-by-income/',views.Top50IncomeClubsView.as_view(),name='top50-clubs-by-income'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

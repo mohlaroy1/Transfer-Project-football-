@@ -7,13 +7,9 @@
     <list default="true" id="b8e90cbd-bcaa-49a2-b801-05b03d6adcbf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/stats.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/stats.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/stats/150-accurate-predictions.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/stats/150-accurate-predictions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/stats/top-50-clubs-by-expenditure-in-2021.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/stats/top-50-clubs-by-expenditure.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/stats/top-50-clubs-by-income-in-2021.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/stats/top-50-clubs-by-income.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/stats/transfer-records.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/stats/transfer-records.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
