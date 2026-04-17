@@ -15,7 +15,7 @@ urlpatterns = [
     path('players/', views.players_view, name='players'),
     path('tryouts/', views.tryouts_view, name='tryouts'),
     path('u-20-players/', views.u20_players_view, name='u-20'),
-    path('tryouts_details/',views.tryouts_details_view, name='tryouts'),
+    path('tryouts_details/',views.tryouts_details_view, name='tryouts-details'),
     path('about/',views.about_view,name='about'),
     path('about.html',views.about_view),
     path('statistics/', views.StatisticsView.as_view(), name='stats'),

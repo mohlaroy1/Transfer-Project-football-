@@ -51,13 +51,13 @@
             <h3><a href="./countries/other.html">Other</a> <br/></h3>
         </div>
         <div class="navbar-menu">
-            <h3><a href="./clubs.html">CLUBS</a></h3>
-            <h3><a href="./latest-transfers.html">LATEST TRANSFERS</a></h3>
-            <h3><a href="./players.html">PLAYERS</a></h3>
-            <h3><a href="u-20.html">U-20 PLAYERS</a></h3>
-            <h3><a href="./tryouts.html">TRYOUTS</a></h3>
-            <h3><a href="./stats.html">STATS</a></h3>
-            <h3><a href="./about.html">ABOUT US</a></h3>
+            <h3><a href="{% url 'clubs' %}">CLUBS</a></h3>
+            <h3><a href="{% url 'latest-transfers' %}">LATEST TRANSFERS</a></h3>
+            <h3><a href="{% url 'players' %}">PLAYERS</a></h3>
+            <h3><a href="{% url 'u-20' %}">U-20 PLAYERS</a></h3>
+            <h3><a href="{% url 'tryouts-details' %}">TRYOUTS</a></h3>
+            <h3><a href="{% url 'stats' %}">STATS</a></h3>
+            <h3><a href="{% url 'about' %}">ABOUT US</a></h3>
         </div>
         <div class="icon">
             <a href="{% url 'home' %}">
